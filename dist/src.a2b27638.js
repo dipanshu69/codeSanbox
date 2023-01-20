@@ -118,10 +118,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"src/index.js":[function(require,module,exports) {
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 // const welcome = name => {
 //     const greetings = msg => {
 //         console.log(`${msg}  ${name}`);
@@ -204,33 +200,47 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
 
 //findSimilar key and value from object
 
-var input1 = {
-  a: 1,
-  b: 2,
-  c: 3,
-  d: 10,
-  e: 12
-};
-var input2 = {
-  a: 2,
-  e: 12,
-  f: 6,
-  d: 10
-};
-var output = {
-  d: 10,
-  e: 12
-};
-var findSimilar = function findSimilar(obj1, obj2) {
-  var result = {};
-  for (var key in obj2) {
-    if (obj1.hasOwnProperty(key) && obj1[key] === obj2[key]) {
-      Object.assign(result, _defineProperty({}, key, obj2[key]));
-    }
+// const input1 = { a: 1, b: 2, c: 3, d: 10, e: 12 };
+// const input2 = { a: 2, e: 12, f: 6, d: 10 };
+
+// const output = { d: 10, e: 12 };
+
+// const findSimilar = (obj1, obj2) => {
+//   const result = {};
+//   for (let key in obj1) {
+//     if (obj1[key] == obj2[key]) {
+//       Object.assign(result, { [key]: obj1[key] });
+//     }
+//   }
+//   return result;
+// };
+
+// console.log(findSimilar(input1, input2));
+
+//find second largest number in array
+
+// const array1 = [1, 2, -2, 11, 7, 1];
+// const array2 = [1, 4, 7, 2, 4];
+
+// const secondLargest = arr1 => {
+//   const newarray = arr1.sort((a, b) => b - a).filter((item, index) => arr1.indexOf(item) === index);
+//   return(newarray[1]);
+// };
+
+// console.log(secondLargest(array2));
+
+//rotate array by 2 places forword 
+
+var input = [2, 7, 11, 4, -2];
+var input2 = [11, 4, -2, 2, 7];
+var rotateArray = function rotateArray(arr) {
+  for (var i = 0; i < 2; i++) {
+    var ele = arr.shift();
+    arr.push(ele);
   }
-  return result;
+  console.log(arr);
 };
-console.log(findSimilar(input1, input2));
+rotateArray(input);
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
