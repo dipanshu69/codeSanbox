@@ -118,6 +118,10 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"src/index.js":[function(require,module,exports) {
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 // const welcome = name => {
 //     const greetings = msg => {
 //         console.log(`${msg}  ${name}`);
@@ -198,7 +202,35 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
 // console.log(FindMaxChar(str1));
 
-//findSimilar
+//findSimilar key and value from object
+
+var input1 = {
+  a: 1,
+  b: 2,
+  c: 3,
+  d: 10,
+  e: 12
+};
+var input2 = {
+  a: 2,
+  e: 12,
+  f: 6,
+  d: 10
+};
+var output = {
+  d: 10,
+  e: 12
+};
+var findSimilar = function findSimilar(obj1, obj2) {
+  var result = {};
+  for (var key in obj2) {
+    if (obj1.hasOwnProperty(key) && obj1[key] === obj2[key]) {
+      Object.assign(result, _defineProperty({}, key, obj2[key]));
+    }
+  }
+  return result;
+};
+console.log(findSimilar(input1, input2));
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -224,7 +256,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37491" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39343" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

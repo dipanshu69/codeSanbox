@@ -78,4 +78,21 @@
 
 // console.log(FindMaxChar(str1));
 
-//findSimilar
+//findSimilar key and value from object
+
+const input1 = { a: 1, b: 2, c: 3, d: 10, e: 12 };
+const input2 = { a: 2, e: 12, f: 6, d: 10 };
+
+const output = { d: 10, e: 12 };
+
+const findSimilar = (obj1, obj2) => {
+  const result = {};
+  for (let key in obj2) {
+    if (obj1.hasOwnProperty(key) && obj1[key] === obj2[key]) {
+      Object.assign(result, { [key]: obj2[key] });
+    }
+  }
+  return result;
+};
+
+console.log(findSimilar(input1, input2));
