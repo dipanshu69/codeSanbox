@@ -109,16 +109,16 @@
 
 // console.log(secondLargest(array2));
 
-//rotate array by 2 places forword 
+//rotate array by 2 places forword
 
-const input = [2, 7, 11 , 4 , -2];
-const input2 = [11, 4 , -2 , 2, 7];
+const input = [2, 7, 11, 4, -2];
+const input2 = [11, 4, -2, 2, 7];
 
-const rotateArray = arr => {
-    for(let i = 0 ; i<2 ; i++){
-        let ele = arr.shift();
-        arr.push(ele);
-    }
-    console.log(arr);
-}
+const rotateArray = (arr) => {
+  for (let i = 0; i < 2; i++) {
+    let ele = arr.shift();
+    arr.push(ele);
+  }
+  console.log(arr);
+};
 rotateArray(input);

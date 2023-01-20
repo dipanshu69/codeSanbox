@@ -229,7 +229,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
 // console.log(secondLargest(array2));
 
-//rotate array by 2 places forword 
+//rotate array by 2 places forword
 
 var input = [2, 7, 11, 4, -2];
 var input2 = [11, 4, -2, 2, 7];
