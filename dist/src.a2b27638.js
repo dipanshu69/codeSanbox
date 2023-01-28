@@ -329,29 +329,63 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 //  console.log(findMin(arr));
 
 //fizzBuzz
-var fizzBuzz = function fizzBuzz() {
-  var c3 = 0;
-  var c5 = 0;
-  for (var i = 1; i <= 100; i++) {
-    c3++;
-    c5++;
-    var d = "";
-    if (c3 == 3) {
-      d += "fizz";
-      c3 = 0;
-    }
-    if (c5 == 5) {
-      d += "buzz";
-      c5 = 0;
-    }
-    if (d == "") {
-      console.log(i);
-    } else {
-      console.log(d);
-    }
-  }
+// const fizzBuzz = () => {
+//   let c3 = 0;
+//   let c5 = 0;
+//   for (let i = 1; i <= 100; i++) {
+//     c3++;
+//     c5++;
+//     let d = "";
+//     if (c3 == 3) {
+//       d += "fizz";
+//       c3 = 0;
+//     }
+//     if (c5 == 5) {
+//       d += "buzz";
+//       c5 = 0;
+//     }
+
+//     if (d == "") {
+//       console.log(i);
+//     } else {
+//       console.log(d);
+//     }
+//   }
+// };
+// fizzBuzz();
+
+//Capitalize first letter of a Word in a sentence
+
+// const Capitalize = str => {
+//     console.log(str.split(" ")
+//     .map(word => word[0].toUpperCase() + word.slice(1).toLowerCase()).join(" "));
+// }
+
+//  Capitalize("hello there my name is dipanSHU");
+
+//Find the length of duplicates in an array1
+var array = [1, 3, 5, 2, 1, 6, 5, 6];
+var duplicates = function duplicates(arr) {
+  var newArray = [];
+  count = 0;
+  arr.map(function (ele) {
+    newArray.includes(ele) ? count++ : newArray.push(ele);
+  });
+  return count;
 };
-fizzBuzz();
+//Unique array without duplicates
+
+var unique = array.filter(function (item, index) {
+  return array.indexOf(item) === index;
+});
+console.log(unique);
+var duplicates1 = unique.map(function (value) {
+  return [value, array.filter(function (str) {
+    return str === value;
+  })];
+});
+console.log(duplicates1);
+console.log(duplicates(array));
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
