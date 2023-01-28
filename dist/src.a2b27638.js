@@ -118,9 +118,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"src/index.js":[function(require,module,exports) {
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 // const welcome = name => {
 //     const greetings = msg => {
 //         console.log(`${msg}  ${name}`);
@@ -246,28 +243,115 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 // };
 // rotateArray(input);
 
-//Count all Vowels 
+//Count all Vowels
 
-var countVowels = function countVowels(sentence) {
-  var count = 0;
-  var vowels = ["a", "e", "i", "o", "u"];
-  var _iterator = _createForOfIteratorHelper(sentence),
-    _step;
-  try {
-    for (_iterator.s(); !(_step = _iterator.n()).done;) {
-      var char = _step.value;
-      if (vowels.includes(char.toLowerCase())) {
-        count++;
-      }
+// const countVowels = sentence => {
+//         let count  = 0;
+//         const vowels = ["a", "e", "i", "o", "u"];
+
+//         for(let char of sentence){
+//             console.log(char);
+//             if(vowels.includes(char.toLowerCase())){
+//                 count++;
+//             }
+//         }
+//         return count;
+// }
+
+// console.log(countVowels("Hie there my name is Dipanshu"));
+
+//isPalindrome
+
+// const isPalindrome = (str) => {
+//   return str.toLowerCase() === str.split("").reverse().join("").toLowerCase();
+// };
+
+// console.log(isPalindrome("love"));
+
+//Remove duplicates
+
+// const arr = [1, 3, 4, 1, 6, 7, 3];
+// //[1,1,3,3,4,6,7]
+// const removeduplicates = (array) => {
+//   return array.sort((a, b) => a - b).filter((item, index) => array.indexOf(item) === index);
+// };
+
+// console.log(removeduplicates(arr));
+//Find Max and Min number in an array with and without method
+
+// const arr = [1, 3, 4, 1, 6, 7, 3];
+//withoutMethod
+// const findMax = (array) => {
+//   let max = array[0];
+
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i] > max) {
+//       max = array[i];
+//     }
+//   }
+//   return max;
+// };
+// console.log(findMax(arr));
+//withMethod
+//  const array = [1, 3, 4, 1, 6, 7, 3];
+
+//  const findMax = arr => {
+//     const max = arr.reduce((acc, cur) => {
+//         console.log(acc, cur);
+//         return acc > cur ? acc : cur;
+//     });
+//     return max;
+//  }
+//  console.log(findMax(array));
+//FindMMin
+//   const arr = [1, 3, 4, 1, 6, 7, 3];
+//withoutMethod
+// const findMin = (array) => {
+//   let max = array[0];
+
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i] < max) {
+//       max = array[i];
+//     }
+//   }
+//   return max;
+// };
+// console.log(findMin(arr));
+//withMethod
+
+//  const findMin = arr => {
+//     const max = arr.reduce((acc, cur) => {
+//         console.log(acc, cur);
+//         return acc < cur ? acc : cur;
+//     });
+//     return max;
+//  }
+//  console.log(findMin(arr));
+
+//fizzBuzz
+var fizzBuzz = function fizzBuzz() {
+  var c3 = 0;
+  var c5 = 0;
+  for (var i = 1; i <= 100; i++) {
+    c3++;
+    c5++;
+    var d = "";
+    if (c3 == 3) {
+      d += "fizz";
+      c3 = 0;
     }
-  } catch (err) {
-    _iterator.e(err);
-  } finally {
-    _iterator.f();
+    if (c5 == 5) {
+      d += "buzz";
+      c5 = 0;
+    }
+    if (d == "") {
+      console.log(i);
+    } else {
+      console.log(d);
+    }
   }
-  return count;
 };
-console.log(countVowels("Hie there my name is Dipanshu"));
+fizzBuzz();
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

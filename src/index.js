@@ -123,19 +123,113 @@
 // };
 // rotateArray(input);
 
-//Count all Vowels 
+//Count all Vowels
 
-const countVowels = sentence => {
-        let count  = 0;
-        const vowels = ["a", "e", "i", "o", "u"];
-        
-        for(let char of sentence){
-            if(vowels.includes(char.toLowerCase())){
-                count++;
-            }
-        }
-        return count;
-}
+// const countVowels = sentence => {
+//         let count  = 0;
+//         const vowels = ["a", "e", "i", "o", "u"];
 
+//         for(let char of sentence){
+//             console.log(char);
+//             if(vowels.includes(char.toLowerCase())){
+//                 count++;
+//             }
+//         }
+//         return count;
+// }
 
-console.log(countVowels("Hie there my name is Dipanshu"));
+// console.log(countVowels("Hie there my name is Dipanshu"));
+
+//isPalindrome
+
+// const isPalindrome = (str) => {
+//   return str.toLowerCase() === str.split("").reverse().join("").toLowerCase();
+// };
+
+// console.log(isPalindrome("love"));
+
+//Remove duplicates
+
+// const arr = [1, 3, 4, 1, 6, 7, 3];
+// //[1,1,3,3,4,6,7]
+// const removeduplicates = (array) => {
+//   return array.sort((a, b) => a - b).filter((item, index) => array.indexOf(item) === index);
+// };
+
+// console.log(removeduplicates(arr));
+//Find Max and Min number in an array with and without method
+
+// const arr = [1, 3, 4, 1, 6, 7, 3];
+//withoutMethod
+// const findMax = (array) => {
+//   let max = array[0];
+
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i] > max) {
+//       max = array[i];
+//     }
+//   }
+//   return max;
+// };
+// console.log(findMax(arr));
+//withMethod
+//  const array = [1, 3, 4, 1, 6, 7, 3];
+
+//  const findMax = arr => {
+//     const max = arr.reduce((acc, cur) => {
+//         console.log(acc, cur);
+//         return acc > cur ? acc : cur;
+//     });
+//     return max;
+//  }
+//  console.log(findMax(array));
+//FindMMin
+//   const arr = [1, 3, 4, 1, 6, 7, 3];
+//withoutMethod
+// const findMin = (array) => {
+//   let max = array[0];
+
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i] < max) {
+//       max = array[i];
+//     }
+//   }
+//   return max;
+// };
+// console.log(findMin(arr));
+//withMethod
+
+//  const findMin = arr => {
+//     const max = arr.reduce((acc, cur) => {
+//         console.log(acc, cur);
+//         return acc < cur ? acc : cur;
+//     });
+//     return max;
+//  }
+//  console.log(findMin(arr));
+
+//fizzBuzz
+const fizzBuzz = () => {
+  let c3 = 0;
+  let c5 = 0;
+  for (let i = 1; i <= 100; i++) {
+    c3++;
+    c5++;
+    let d = "";
+    if (c3 == 3) {
+      d += "fizz";
+      c3 = 0;
+    }
+    if (c5 == 5) {
+      d += "buzz";
+      c5 = 0;
+    }
+
+    if (d == "") {
+      console.log(i);
+    } else {
+      console.log(d);
+    }
+  }
+};
+fizzBuzz();
