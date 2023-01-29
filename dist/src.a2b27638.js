@@ -364,28 +364,57 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 //  Capitalize("hello there my name is dipanSHU");
 
 //Find the length of duplicates in an array1
-var array = [1, 3, 5, 2, 1, 6, 5, 6];
-var duplicates = function duplicates(arr) {
-  var newArray = [];
-  count = 0;
-  arr.map(function (ele) {
-    newArray.includes(ele) ? count++ : newArray.push(ele);
-  });
-  return count;
-};
-//Unique array without duplicates
+// let array = [1,3,5,2,1,6,5,6];
+// const duplicates = arr => {
+//   const newArray = [];
+//     count = 0;
+//     arr.map(ele => {
+//         newArray.includes(ele) ? count++ : newArray.push(ele);
+//     });
+//     return count;
+// }
+// //Unique array without duplicates
 
-var unique = array.filter(function (item, index) {
-  return array.indexOf(item) === index;
-});
-console.log(unique);
-var duplicates1 = unique.map(function (value) {
-  return [value, array.filter(function (str) {
-    return str === value;
-  })];
-});
-console.log(duplicates1);
-console.log(duplicates(array));
+// let unique = array.filter((item,index) => array.indexOf(item) === index);
+// console.log(unique);
+// let duplicates1 = unique.map(value =>
+// [value , array.filter(str => str === value)]);
+// console.log(duplicates1);
+// console.log(duplicates(array));
+
+//find missing odd number in array
+// const input =  [3,6,9,12,15,18,22]; //[21, 23, 25, 27, 31];//[5, 7, 9, 11, 15, 17];
+// const output = 13;
+
+// const findFirstOdd = (arr,n) => {
+//   for (let i = 0; i < arr.length; i++) {
+//     if (!(arr[i] + n == arr[i + 1])) {
+//       return arr[i] + n;
+//     }
+//   }
+// };
+
+// console.log(findFirstOdd(input, 3));
+
+//not add yourself
+var input = [2, 7, 11, 4, -2];
+var output = [20, 15, 11, 18, 24];
+var notAddUrSelf = function notAddUrSelf(arr) {
+  var result = [];
+  var sum = function sum(arr) {
+    var add = 0;
+    for (var i = 0; i < arr.length; i++) {
+      add += arr[i];
+    }
+    return add;
+  };
+  var newadd = sum(arr);
+  for (var i = 0; i < arr.length; i++) {
+    result.push(newadd - arr[i]);
+  }
+  return result;
+};
+console.log(notAddUrSelf(input));
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
