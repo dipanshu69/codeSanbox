@@ -299,18 +299,41 @@
 // };
 
 // console.log(notAddUrSelf(input));
-//fib
 
-const fibSeries = (num) => {
-  let n1 = 0,
-    n2 = 1,
-    next;
-  for (let i = 0; i <= num; i++) {
-    console.log(n1);
-    next = n1 + n2;
-    n1 = n2;
-    n2 = next;
-  }
-};
+//fibSeries
 
-console.log(fibSeries(5));
+// const fibSeries = (num) => {
+//   let n1 = 0,
+//     n2 = 1,
+//     next;
+//   for (let i = 0; i <= num; i++) {
+//     console.log(n1);
+//     next = n1 + n2;
+//     n1 = n2;
+//     n2 = next;
+//   }
+// };
+
+// console.log(fibSeries(5));
+
+//Reverse A strings
+
+//withoutMethod
+
+// const reverseString = (str) => {
+//   let reverse = "";
+//   for (let i = 0; i < str.length; i++) {
+//     reverse = str[i] + reverse;
+//   }
+//   return reverse;
+// };
+
+// console.log(reverseString("Hello"));
+
+//withMethod
+
+// const reverseString = (str) => {
+//   return str.split("").reverse().join("");
+// };
+
+// console.log(reverseString("Hello"));
