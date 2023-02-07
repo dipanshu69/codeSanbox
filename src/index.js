@@ -337,3 +337,13 @@
 // };
 
 // console.log(reverseString("Hello"));
+
+//creating Method for Array using prototype
+
+Array.prototype.returnFirst = arr => {
+    return arr[0];
+}
+
+const array = ["hie", "there", "my", "name", "is", "Dipanshu"];
+
+a
