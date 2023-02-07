@@ -277,25 +277,40 @@
 // console.log(findFirstOdd(input, 3));
 
 //not add yourself
-const input = [2, 7, 11, 4, -2];
-const output = [20, 15, 11, 18, 24];
+// const input = [2, 7, 11, 4, -2];
+// const output = [20, 15, 11, 18, 24];
 
-const notAddUrSelf = (arr) => {
-  const result = [];
+// const notAddUrSelf = (arr) => {
+//   const result = [];
 
-  const sum = (arr) => {
-    let add = 0;
-    for (let i = 0; i < arr.length; i++) {
-      add += arr[i];
-    }
-    return add;
-  };
+//   const sum = (arr) => {
+//     let add = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//       add += arr[i];
+//     }
+//     return add;
+//   };
 
-  let newadd = sum(arr);
-  for (let i = 0; i < arr.length; i++) {
-    result.push(newadd - arr[i]);
+//   let newadd = sum(arr);
+//   for (let i = 0; i < arr.length; i++) {
+//     result.push(newadd - arr[i]);
+//   }
+//   return result;
+// };
+
+// console.log(notAddUrSelf(input));
+//fib
+
+const fibSeries = (num) => {
+  let n1 = 0,
+    n2 = 1,
+    next;
+  for (let i = 0; i <= num; i++) {
+    console.log(n1);
+    next = n1 + n2;
+    n1 = n2;
+    n2 = next;
   }
-  return result;
 };
 
-console.log(notAddUrSelf(input));
+console.log(fibSeries(5));
